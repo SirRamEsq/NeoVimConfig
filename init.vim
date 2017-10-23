@@ -3,23 +3,9 @@
 runtime! debian.vim
 
 
-" All system-wide defaults are set in $VIMRUNTIME/debian.vim and sourced by
-" the call to :runtime you can find below.  If you wish to change any of those
-" settings, you should do it in this file (/etc/vim/vimrc), since debian.vim
-" will be overwritten everytime an upgrade of the vim packages is performed.
-" It is recommended to make changes after sourcing debian.vim since it alters
-" the value of the 'compatible' option.
-
-" Uncomment the next line to make Vim more Vi-compatible
-" NOTE: debian.vim sets 'nocompatible'.  Setting 'compatible' changes numerous
-" options, so any other options should be set AFTER setting 'compatible'.
-"set compatible
-
-" Vim5 and later versions support syntax highlighting. Uncommenting the next
-" line enables syntax highlighting by default.
-if has("syntax")
-  syntax on
-endif
+"General
+syntax on
+set nocompatible 
 "============
 "pathogen
 "===========
@@ -30,28 +16,20 @@ let g:go_highlight_functions = 1
 let g:go_highlight_methods = 1
 let g:go_highlight_structs = 1
 let g:go_fmt_command = "goimports"
+let g:go_highlight_operators = 1  
+let g:go_highlight_build_constraints = 1  
 au FileType go nmap <Leader>s <Plug>(go-implements)
 au FileType go nmap <Leader>i <Plug>(go-info)
-syntax on  
 filetype on  
 filetype plugin on  
 filetype plugin indent on  
-" If using a dark background within the editing area and syntax highlighting
-" turn on this option as well
-"set background=dark
 
-" Uncomment the following to have Vim jump to the last position when
-" reopening a file
-"if has("autocmd")
-"  au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
-"endif
-
-" Uncomment the following to have Vim load indentation rules and plugins
-" according to the detected filetype.
-"if has("autocmd")
-"  filetype plugin indent on
-"endif
-
+"Deoplete
+let g:deoplete#enable_at_startup = 1
+" use tab to forward cycle
+inoremap <silent><expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
+" use tab to backward cycle
+"inoremap <silent><expr><s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
 " The following are commented out as they cause vim to behave a lot
 " differently from regular Vi. They are highly recommended though.
 set showcmd		" Show (partial) command in status line.
@@ -64,11 +42,14 @@ set incsearch		" Incremental search
 set mouse=a		" Enable mouse usage (all modes)
 
 " Source a global configuration file if available
-if filereadable("/etc/vim/vimrc.local")
-  source /etc/vim/vimrc.local
-endif
+"if filereadable("/etc/vim/vimrc.local")
+  "source /etc/vim/vimrc.local
+"endif
 
-:color desert256 
+"Favorite colors
+":color desert256 
+:color molokai 
+
 "Set tab character to appear 4 spaces wide
 set tabstop=4
 "Set an indent width to 4 to correspond to a single tab
