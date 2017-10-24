@@ -2,20 +2,34 @@
 " properly set to work with the Vim-related packages available in Debian.
 runtime! debian.vim
 
+"VimPlug
+call plug#begin()
+Plug 'fatih/vim-go'
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'https://github.com/w0rp/ale'
+Plug 'bling/vim-airline'
+Plug 'tpope/vim-fugitive'
+Plug 'chiel92/vim-autoformat'
+
+call plug#end()
+
+"Linters (ALE)
+let g:ale_linters = {
+\   'cpp': ['clang'],
+\}
+
+"autoformat on save
+"au BufWrite * :Autoformat
 
 "General
 syntax on
-set nocompatible 
-"============
-"pathogen
-"===========
-execute pathogen#infect()
+"set nocompatible 
 
 "Go
 let g:go_highlight_functions = 1
 let g:go_highlight_methods = 1
 let g:go_highlight_structs = 1
-let g:go_fmt_command = "goimports"
+let g:go_fmt_command = 'goimports'
 let g:go_highlight_operators = 1  
 let g:go_highlight_build_constraints = 1  
 au FileType go nmap <Leader>s <Plug>(go-implements)
@@ -117,6 +131,9 @@ nnoremap <expr> <F10> ":<C-U>set tabstop=" . input("Set file tab width [1,2,3,4]
 
 "map highlight search toggle
 nmap <F12> :<C-U>set hlsearch!<CR>
-
-"Powerline
-let g:Powerline_symbols = 'fancy'
+" Load all plugins now.
+" Plugins need to be added to runtimepath before helptags can be generated.
+packloadall
+" Load all of the helptags now, after plugins have been loaded.
+" All messages and errors will be ignored.
+silent! helptags ALL
