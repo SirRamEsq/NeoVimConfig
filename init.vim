@@ -2,6 +2,9 @@
 " properly set to work with the Vim-related packages available in Debian.
 runtime! debian.vim
 
+"Ensure correct colors
+"set termguicolors
+
 "VimPlug
 call plug#begin()
 Plug 'fatih/vim-go'
@@ -17,6 +20,7 @@ call plug#end()
 let g:ale_linters = {
 \   'cpp': ['clang'],
 \}
+"\   'go': ['golint', 'gofmt'],
 
 "autoformat on save
 "au BufWrite * :Autoformat
@@ -121,7 +125,8 @@ nmap <F3> :<C-U>Sexplore <CR>
 "Tagbar Key
 nmap <F5> :<C-U>TagbarOpen fjc<CR>
 
-"cpp make
+"Default make function, can be overwritten by specifying
+"a file in after/ftplugins/<filetype>.vim
 nmap <F9> :<C-U>make<CR><CR>
 
 "Assign Retab key"
