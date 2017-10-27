@@ -21,6 +21,8 @@ let g:ale_linters = {
 \   'cpp': ['clang'],
 \}
 "\   'go': ['golint', 'gofmt'],
+"Keep sign gutter open
+let g:ale_sign_column_always = 1
 
 "autoformat on save
 "au BufWrite * :Autoformat
