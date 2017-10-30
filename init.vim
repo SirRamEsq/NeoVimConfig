@@ -13,6 +13,8 @@ Plug 'https://github.com/w0rp/ale'
 Plug 'bling/vim-airline'
 Plug 'tpope/vim-fugitive'
 Plug 'chiel92/vim-autoformat'
+Plug 'https://github.com/scrooloose/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
 
 call plug#end()
 
@@ -100,6 +102,20 @@ au FileType xml setlocal foldmethod=syntax
 "Show Line numbers
 set number
 
+"Git Nerdtree integration
+let g:NERDTreeIndicatorMapCustom = {
+    \ 'Modified'  : '✹',
+    \ 'Staged'    : '✚',
+    \ 'Untracked' : '✭',
+    \ 'Renamed'   : '➜',
+    \ 'Unmerged'  : '═',
+    \ 'Deleted'   : '✖',
+    \ 'Dirty'     : '✗',
+    \ 'Clean'     : '✔︎',
+    \ 'Ignored'   : '☒',
+    \ 'Unknown'   : '?'
+    \ }
+
 """"""""""""""""""""
 "netrw look and feel
 """"""""""""""""""""
@@ -123,11 +139,10 @@ let g:netrw_banner = 1
 "<C-U> clears the command line, leaving only ':'
 
 "assign netrw mapping
-nmap <F2> :<C-U>Vexplore <CR>
-nmap <F3> :<C-U>Sexplore <CR>
+nmap <F2> :<C-U>NERDTreeToggle <CR>
 
 "Tagbar Key
-nmap <F5> :<C-U>TagbarOpen fjc<CR>
+nmap <F3> :<C-U>TagbarOpen fjc<CR>
 
 "Default make function, can be overwritten by specifying
 "a file in after/ftplugins/<filetype>.vim
