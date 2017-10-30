@@ -29,7 +29,6 @@ let g:ale_sign_column_always = 1
 
 "General
 syntax on
-"set nocompatible 
 
 "Go
 let g:go_highlight_functions = 1
@@ -94,6 +93,9 @@ set foldmethod=syntax
 set foldnestmax=10
 set nofoldenable
 set foldlevel=2
+
+let g:xml_syntax_folding=1
+au FileType xml setlocal foldmethod=syntax
 
 "Show Line numbers
 set number
