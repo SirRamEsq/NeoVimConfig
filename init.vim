@@ -16,6 +16,8 @@ Plug 'chiel92/vim-autoformat'
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'majutsushi/tagbar'
+Plug 'airblade/vim-gitgutter'
+Plug 'easymotion/vim-easymotion'
 
 call plug#end()
 
