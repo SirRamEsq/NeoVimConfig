@@ -13,8 +13,9 @@ Plug 'https://github.com/w0rp/ale'
 Plug 'bling/vim-airline'
 Plug 'tpope/vim-fugitive'
 Plug 'chiel92/vim-autoformat'
-Plug 'https://github.com/scrooloose/nerdtree'
+Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'majutsushi/tagbar'
 
 call plug#end()
 
@@ -142,7 +143,7 @@ let g:netrw_banner = 1
 nmap <F2> :<C-U>NERDTreeToggle <CR>
 
 "Tagbar Key
-nmap <F3> :<C-U>TagbarOpen fjc<CR>
+nmap <F3> :<C-U>TagbarToggle<CR>
 
 "Default make function, can be overwritten by specifying
 "a file in after/ftplugins/<filetype>.vim
