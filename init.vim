@@ -142,10 +142,15 @@ let g:netrw_banner = 1
 "<C-U> clears the command line, leaving only ':'
 
 "assign netrw mapping
-nmap <F2> :<C-U>NERDTreeToggle <CR>
+nmap <F2> :<C-U>Vexplore <CR>
+nmap <F3> :<C-U>Sexplore <CR>
+
+"assign nerdtree mapping
+"nmap <F2> :<C-U>NERDTreeToggle <CR>
 
 "Tagbar Key
-nmap <F3> :<C-U>TagbarToggle<CR>
+"nmap <F3> :<C-U>TagbarToggle<CR>
+
 
 "Default make function, can be overwritten by specifying
 "a file in after/ftplugins/<filetype>.vim
