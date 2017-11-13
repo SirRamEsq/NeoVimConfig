@@ -23,8 +23,8 @@ call plug#end()
 
 "Linters (ALE)
 let g:ale_linters = {
-\   'cpp': ['clang'],
-\}
+			\   'cpp': ['clang'],
+			\}
 "\   'go': ['golint', 'gofmt'],
 "Keep sign gutter open
 let g:ale_sign_column_always = 1
@@ -40,13 +40,13 @@ let g:go_highlight_functions = 1
 let g:go_highlight_methods = 1
 let g:go_highlight_structs = 1
 let g:go_fmt_command = 'goimports'
-let g:go_highlight_operators = 1  
-let g:go_highlight_build_constraints = 1  
+let g:go_highlight_operators = 1
+let g:go_highlight_build_constraints = 1
 au FileType go nmap <Leader>s <Plug>(go-implements)
 au FileType go nmap <Leader>i <Plug>(go-info)
-filetype on  
-filetype plugin on  
-filetype plugin indent on  
+filetype on
+filetype plugin on
+filetype plugin indent on
 
 "Deoplete
 let g:deoplete#enable_at_startup = 1
@@ -67,12 +67,12 @@ set mouse=a		" Enable mouse usage (all modes)
 
 " Source a global configuration file if available
 "if filereadable("/etc/vim/vimrc.local")
-  "source /etc/vim/vimrc.local
+"source /etc/vim/vimrc.local
 "endif
 
 "Favorite colors
-":color desert256 
-:color molokai 
+":color desert256
+:color molokai
 
 "Set tab character to appear 4 spaces wide
 set tabstop=4
@@ -94,7 +94,7 @@ let g:cpp_experimental_simple_template_highlight = 1
 """"""""
 "Folding"
 """""""""
-set foldmethod=syntax   
+set foldmethod=syntax
 set foldnestmax=10
 set nofoldenable
 set foldlevel=2
@@ -107,17 +107,17 @@ set number
 
 "Git Nerdtree integration
 let g:NERDTreeIndicatorMapCustom = {
-    \ 'Modified'  : '✹',
-    \ 'Staged'    : '✚',
-    \ 'Untracked' : '✭',
-    \ 'Renamed'   : '➜',
-    \ 'Unmerged'  : '═',
-    \ 'Deleted'   : '✖',
-    \ 'Dirty'     : '✗',
-    \ 'Clean'     : '✔︎',
-    \ 'Ignored'   : '☒',
-    \ 'Unknown'   : '?'
-    \ }
+			\ 'Modified'  : '✹',
+			\ 'Staged'    : '✚',
+			\ 'Untracked' : '✭',
+			\ 'Renamed'   : '➜',
+			\ 'Unmerged'  : '═',
+			\ 'Deleted'   : '✖',
+			\ 'Dirty'     : '✗',
+			\ 'Clean'     : '✔︎',
+			\ 'Ignored'   : '☒',
+			\ 'Unknown'   : '?'
+			\ }
 
 """"""""""""""""""""
 "netrw look and feel
@@ -157,7 +157,10 @@ nmap <F3> :<C-U>Sexplore <CR>
 nmap <F9> :<C-U>make<CR><CR>
 
 "Assign Retab key"
-nnoremap <expr> <F10> ":<C-U>set tabstop=" . input("Set file tab width [1,2,3,4]") . "<CR>:set noexpandtab<CR>:%retab!<CR>:set tabstop=4<CR>"
+"nnoremap <expr> <F10> ":<C-U>set tabstop=" . input("Set file tab width [1,2,3,4]") . "<CR>:set noexpandtab<CR>:%retab!<CR>:set tabstop=4<CR>"
+"Assign Autoformat key
+nnoremap <expr> <F10> ":<C-U>Autoformat<CR>"
+
 
 "<F11> Mapped to fullscreen
 
