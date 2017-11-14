@@ -30,6 +30,8 @@ let g:ale_linters = {
 "Keep sign gutter open
 let g:ale_sign_column_always = 1
 
+let g:ale_c_clang_options = '-std=c14 -Wall'
+
 "autoformat on save
 "au BufWrite * :Autoformat
 
