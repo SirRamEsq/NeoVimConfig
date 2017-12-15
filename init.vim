@@ -30,7 +30,7 @@ let g:ale_linters = {
 "Keep sign gutter open
 let g:ale_sign_column_always = 1
 
-let g:ale_c_clang_options = '-std=c14 -Wall'
+let g:ale_c_clang_options = '-std=c14 -Wall -Wno-system-headers'
 
 "autoformat on save
 "au BufWrite * :Autoformat
@@ -45,8 +45,8 @@ let g:go_highlight_structs = 1
 let g:go_fmt_command = 'goimports'
 let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
-au FileType go nmap <Leader>s <Plug>(go-implements)
-au FileType go nmap <Leader>i <Plug>(go-info)
+au FileType go nnoremap <Leader>s <Plug>(go-implements)
+au FileType go nnoremap <Leader>i <Plug>(go-info)
 filetype on
 filetype plugin on
 filetype plugin indent on
@@ -136,6 +136,25 @@ let g:netrw_winsize = 50
 "True/False, enables or disables banner
 let g:netrw_banner = 1
 
+function! AskForConfirmationSave() abort
+        let l:choice = input('Save Session? [Y/N]')
+		" ==? is case insensitive
+        if l:choice ==? 'Y'
+			execute ':mksession ./vimSession.vim'
+        else 
+			return
+        endif
+endfunction
+
+function! AskForConfirmationLoad() abort
+        let l:choice = input('Load Session? [Y/N]')
+		" ==? is case insensitive
+        if l:choice ==? 'Y'
+			execute ':source ./vimSession.vim'
+        else 
+			return
+        endif
+endfunction
 
 """""""""""""""""""""""
 "Function Key Mappings"
@@ -145,19 +164,23 @@ let g:netrw_banner = 1
 "<C-U> clears the command line, leaving only ':'
 
 "assign netrw mapping
-nmap <F2> :<C-U>Vexplore <CR>
-nmap <F3> :<C-U>Sexplore <CR>
+nnoremap <F2> :<C-U>Vexplore <CR>
+nnoremap <F3> :<C-U>Sexplore <CR>
+
+"Session saving and loading
+nnoremap <F5> :<C-U>call AskForConfirmationSave()<CR>
+nnoremap <F6> :<C-U>call AskForConfirmationLoad()<CR>
 
 "assign nerdtree mapping
-"nmap <F2> :<C-U>NERDTreeToggle <CR>
+"nnoremap <F2> :<C-U>NERDTreeToggle <CR>
 
 "Tagbar Key
-"nmap <F3> :<C-U>TagbarToggle<CR>
+"nnoremap <F3> :<C-U>TagbarToggle<CR>
 
 
 "Default make function, can be overwritten by specifying
 "a file in after/ftplugins/<filetype>.vim
-nmap <F9> :<C-U>make<CR><CR>
+nnoremap <F9> :<C-U>make<CR><CR>
 
 "Assign Retab key"
 "nnoremap <expr> <F10> ":<C-U>set tabstop=" . input("Set file tab width [1,2,3,4]") . "<CR>:set noexpandtab<CR>:%retab!<CR>:set tabstop=4<CR>"
@@ -168,7 +191,7 @@ nnoremap <expr> <F10> ":<C-U>Autoformat<CR>"
 "<F11> Mapped to fullscreen
 
 "map highlight search toggle
-nmap <F12> :<C-U>set hlsearch!<CR>
+nnoremap <F12> :<C-U>set hlsearch!<CR>
 " Load all plugins now.
 " Plugins need to be added to runtimepath before helptags can be generated.
 packloadall
