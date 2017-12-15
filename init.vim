@@ -140,7 +140,7 @@ function! AskForConfirmationSave() abort
         let l:choice = input('Save Session? [Y/N]')
 		" ==? is case insensitive
         if l:choice ==? 'Y'
-			execute ':mksession ./vimSession.vim'
+			execute ':mksession! ./vimSession.vim'
         else 
 			return
         endif
