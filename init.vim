@@ -44,6 +44,8 @@ syntax on
 "Map f to leader for easy motion
 map f \
 map ff \\
+"timeoutlen is used for mapping delays, ttimeoutlen is used for key code delays
+set timeoutlen=500 ttimeoutlen=500
 
 """""""""""""""""""""""
 " easyMotion config
