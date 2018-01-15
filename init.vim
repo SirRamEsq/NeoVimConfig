@@ -22,7 +22,9 @@ Plug 'tikhomirov/vim-glsl'
 
 call plug#end()
 
+"""""""""""""""""""""""
 "Linters (ALE)
+""""""""""""""""""""""""
 let g:ale_linters = {
 			\   'cpp': ['clang'],
 			\}
@@ -35,10 +37,29 @@ let g:ale_c_clang_options = '-std=c14 -Wall -Wno-system-headers'
 "autoformat on save
 "au BufWrite * :Autoformat
 
+"""""""""""""""""""""""
 "General
+""""""""""""""""""""""""
 syntax on
+"Map f to leader for easy motion
+map f \
+map ff \\
 
+"""""""""""""""""""""""
+" easyMotion config
+" """""""""""""""""""""""
+map <Leader>l <Plug>(easymotion-lineforward)
+map <Leader>j <Plug>(easymotion-j)
+map <Leader>k <Plug>(easymotion-k)
+map <Leader>h <Plug>(easymotion-linebackward)
+map <Leader>h <Plug>(easymotion-linebackward)
+
+let g:EasyMotion_startofline = 0 " keep cursor column when JK motion
+
+
+"""""""""""""""""""""""
 "Go
+""""""""""""""""""""""""
 let g:go_highlight_functions = 1
 let g:go_highlight_methods = 1
 let g:go_highlight_structs = 1
@@ -51,7 +72,9 @@ filetype on
 filetype plugin on
 filetype plugin indent on
 
+"""""""""""""""""""""""
 "Deoplete
+""""""""""""""""""""""""
 let g:deoplete#enable_at_startup = 1
 " use tab to forward cycle
 inoremap <silent><expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
