@@ -19,6 +19,7 @@ Plug 'majutsushi/tagbar'
 Plug 'airblade/vim-gitgutter'
 Plug 'easymotion/vim-easymotion'
 Plug 'tikhomirov/vim-glsl'
+Plug 'ctrlpvim/ctrlp.vim'
 
 call plug#end()
 
