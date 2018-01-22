@@ -20,6 +20,11 @@ Plug 'airblade/vim-gitgutter'
 Plug 'easymotion/vim-easymotion'
 Plug 'tikhomirov/vim-glsl'
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'ryanoasis/vim-devicons'
+
+"Colorschemes
+Plug 'jacoborus/tender.vim'
+Plug 'fmoralesc/molokayo'
 
 call plug#end()
 
@@ -38,9 +43,15 @@ let g:ale_c_clang_options = '-std=c14 -Wall -Wno-system-headers'
 "autoformat on save
 "au BufWrite * :Autoformat
 
+""""""""""""""""""""""""
+"Vim DevIcons (fonts)
+"""""""""""""""""""""""""
+let g:airline_powerline_fonts = 1
+
 """""""""""""""""""""""
 "General
 """"""""""""""""""""""""
+set encoding=utf8
 syntax on
 "Map f to leader for easy motion
 map f \
@@ -163,23 +174,23 @@ let g:netrw_winsize = 50
 let g:netrw_banner = 1
 
 function! AskForConfirmationSave() abort
-        let l:choice = input('Save Session? [Y/N]')
-		" ==? is case insensitive
-        if l:choice ==? 'Y'
-			execute ':mksession! ./vimSession.vim'
-        else 
-			return
-        endif
+	let l:choice = input('Save Session? [Y/N]')
+	" ==? is case insensitive
+	if l:choice ==? 'Y'
+		execute ':mksession! ./vimSession.vim'
+	else
+		return
+	endif
 endfunction
 
 function! AskForConfirmationLoad() abort
-        let l:choice = input('Load Session? [Y/N]')
-		" ==? is case insensitive
-        if l:choice ==? 'Y'
-			execute ':source ./vimSession.vim'
-        else 
-			return
-        endif
+	let l:choice = input('Load Session? [Y/N]')
+	" ==? is case insensitive
+	if l:choice ==? 'Y'
+		execute ':source ./vimSession.vim'
+	else
+		return
+	endif
 endfunction
 
 """""""""""""""""""""""
@@ -198,7 +209,7 @@ nnoremap <F5> :<C-U>call AskForConfirmationSave()<CR>
 nnoremap <F6> :<C-U>call AskForConfirmationLoad()<CR>
 
 "assign nerdtree mapping
-"nnoremap <F2> :<C-U>NERDTreeToggle <CR>
+nnoremap <F1> :<C-U>NERDTreeToggle <CR>
 
 "Tagbar Key
 "nnoremap <F3> :<C-U>TagbarToggle<CR>
