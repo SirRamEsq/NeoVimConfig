@@ -22,6 +22,9 @@ Plug 'tikhomirov/vim-glsl'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'ryanoasis/vim-devicons'
 
+"Syntax highlighters
+Plug 'tbastos/vim-lua'
+
 "Colorschemes
 Plug 'jacoborus/tender.vim'
 Plug 'fmoralesc/molokayo'
