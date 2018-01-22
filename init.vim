@@ -48,6 +48,12 @@ let g:ale_c_clang_options = '-std=c14 -Wall -Wno-system-headers'
 """""""""""""""""""""""""
 let g:airline_powerline_fonts = 1
 
+
+""""""""""""""""""""
+"AIRLINE
+""""""""""""""""""""
+let g:airline_section_z = airline#section#create(['linenr', 'maxlinenr', ':%3v'])
+
 """""""""""""""""""""""
 "General
 """"""""""""""""""""""""
