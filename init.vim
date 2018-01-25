@@ -22,6 +22,7 @@ Plug 'tikhomirov/vim-glsl'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'ryanoasis/vim-devicons'
 Plug 'sirver/UltiSnips'
+Plug 'hobbestigrou/vimtips-fortune'
 
 "Syntax highlighters
 Plug 'tbastos/vim-lua'
@@ -31,6 +32,11 @@ Plug 'jacoborus/tender.vim'
 Plug 'fmoralesc/molokayo'
 
 call plug#end()
+
+""""""""""""""""""""""""
+"vim fortune
+"""""""""""""""""""""""
+let g:fortune_vimtips_display_in_window=0
 
 """"""""""""""""""""""""
 "UltiSnips
@@ -233,6 +239,9 @@ nnoremap <F6> :<C-U>call AskForConfirmationLoad()<CR>
 
 "Tagbar Key
 nnoremap <F4> :<C-U>TagbarToggle<CR>
+
+"Fortune
+nnoremap <F7> :<C-U>Fortune<CR>
 
 
 "Default make function, can be overwritten by specifying
