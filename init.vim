@@ -137,7 +137,7 @@ set mouse=a		" Enable mouse usage (all modes)
 
 "Favorite colors
 ":color desert256
-:color molokai
+:color molokaiCustom
 
 "Set tab character to appear 4 spaces wide
 set tabstop=4
