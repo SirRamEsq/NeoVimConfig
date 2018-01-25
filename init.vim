@@ -15,17 +15,24 @@ Plug 'tpope/vim-fugitive'
 Plug 'chiel92/vim-autoformat'
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
+"Add a tagbar
 Plug 'majutsushi/tagbar'
+"Add git icons to the gutter
 Plug 'airblade/vim-gitgutter'
 Plug 'easymotion/vim-easymotion'
-Plug 'tikhomirov/vim-glsl'
+
+"CTRLP file finding
 Plug 'ctrlpvim/ctrlp.vim'
+"Cool looking dev icons
 Plug 'ryanoasis/vim-devicons'
+"Handles snippets
 Plug 'sirver/UltiSnips'
+"Fortune like vim tips at startup
 Plug 'hobbestigrou/vimtips-fortune'
 
 "Syntax highlighters
 Plug 'tbastos/vim-lua'
+Plug 'tikhomirov/vim-glsl'
 
 "Colorschemes
 Plug 'jacoborus/tender.vim'
