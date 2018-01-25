@@ -21,6 +21,7 @@ Plug 'easymotion/vim-easymotion'
 Plug 'tikhomirov/vim-glsl'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'ryanoasis/vim-devicons'
+Plug 'sirver/UltiSnips'
 
 "Syntax highlighters
 Plug 'tbastos/vim-lua'
@@ -30,6 +31,14 @@ Plug 'jacoborus/tender.vim'
 Plug 'fmoralesc/molokayo'
 
 call plug#end()
+
+""""""""""""""""""""""""
+"UltiSnips
+""""""""""""""""""""""""
+let g:UltiSnipsExpandTrigger="<c-e>"
+let g:UltiSnipsJumpForwardTrigger="<c-f>"
+let g:UltiSnipsJumpBackwardTrigger="<c-b>"
+let g:UltiSnipsEditSplit="vertical"
 
 """""""""""""""""""""""
 "Linters (ALE)
@@ -205,9 +214,10 @@ endfunction
 """""""""""""""""""""""
 "Function Key Mappings"
 """""""""""""""""""""""
-"<F1> Typically mapped to help functions, leave alone
 "
 "<C-U> clears the command line, leaving only ':'
+nnoremap <F1> :<C-U>UltiSnipsEdit<CR>
+
 
 "assign netrw mapping
 nnoremap <F2> :<C-U>Vexplore <CR>
@@ -218,10 +228,10 @@ nnoremap <F5> :<C-U>call AskForConfirmationSave()<CR>
 nnoremap <F6> :<C-U>call AskForConfirmationLoad()<CR>
 
 "assign nerdtree mapping
-nnoremap <F1> :<C-U>NERDTreeToggle <CR>
+"nnoremap <F4> :<C-U>NERDTreeToggle <CR>
 
 "Tagbar Key
-"nnoremap <F3> :<C-U>TagbarToggle<CR>
+nnoremap <F4> :<C-U>TagbarToggle<CR>
 
 
 "Default make function, can be overwritten by specifying
