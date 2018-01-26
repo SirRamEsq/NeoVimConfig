@@ -13,8 +13,6 @@ Plug 'https://github.com/w0rp/ale'
 Plug 'bling/vim-airline'
 Plug 'tpope/vim-fugitive'
 Plug 'chiel92/vim-autoformat'
-Plug 'scrooloose/nerdtree'
-Plug 'Xuyuanp/nerdtree-git-plugin'
 "Add a tagbar
 Plug 'majutsushi/tagbar'
 "Add git icons to the gutter
@@ -86,8 +84,8 @@ let g:airline_section_z = airline#section#create(['linenr', 'maxlinenr', ':%3v']
 set encoding=utf8
 syntax on
 "Map f to leader for easy motion
-map f \
-map ff \\
+map <SPACE> \
+map <SPACE><SPACE> \\
 "timeoutlen is used for mapping delays, ttimeoutlen is used for key code delays
 set timeoutlen=500 ttimeoutlen=10
 
@@ -240,9 +238,6 @@ nnoremap <F3> :<C-U>Sexplore <CR>
 "Session saving and loading
 nnoremap <F5> :<C-U>call AskForConfirmationSave()<CR>
 nnoremap <F6> :<C-U>call AskForConfirmationLoad()<CR>
-
-"assign nerdtree mapping
-"nnoremap <F4> :<C-U>NERDTreeToggle <CR>
 
 "Tagbar Key
 nnoremap <F4> :<C-U>TagbarToggle<CR>
