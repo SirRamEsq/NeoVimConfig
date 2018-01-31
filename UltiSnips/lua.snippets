@@ -1,0 +1,33 @@
+snippet FORKV
+for k,v in pairs($1) do
+	$0
+end
+endsnippet
+
+snippet FORINT
+for i=0, $1 do
+	$0
+end
+endsnippet
+
+snippet NEWCLASS
+local container = {}
+function container.New(baseclass)
+	class = baseclass or {}
+	$0
+
+	local function Update()
+
+	end
+
+	local function Init()
+
+	end
+
+	table.insert(class.UpdateFunctions, Update)
+	table.insert(class.InitFunctions, Init)
+	return class
+end
+
+return container.New
+endsnippet

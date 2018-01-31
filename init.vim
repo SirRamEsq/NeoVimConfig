@@ -31,6 +31,7 @@ Plug 'hobbestigrou/vimtips-fortune'
 "Syntax highlighters
 Plug 'tbastos/vim-lua'
 Plug 'tikhomirov/vim-glsl'
+Plug 'quabug/vim-gdscript'
 
 "Colorschemes
 Plug 'jacoborus/tender.vim'
@@ -47,7 +48,7 @@ let g:fortune_vimtips_display_in_window=0
 "UltiSnips
 """"""""""""""""""""""""
 let g:UltiSnipsExpandTrigger="<c-e>"
-let g:UltiSnipsJumpForwardTrigger="<c-f>"
+let g:UltiSnipsJumpForwardTrigger="<c-w>"
 let g:UltiSnipsJumpBackwardTrigger="<c-b>"
 let g:UltiSnipsEditSplit="vertical"
 let g:UltiSnipsSnippetDirectories = ['~/.config/nvim/UltiSnips', 'UltiSnips']
