@@ -36,6 +36,7 @@ Plug 'quabug/vim-gdscript'
 "Colorschemes
 Plug 'jacoborus/tender.vim'
 Plug 'fmoralesc/molokayo'
+Plug 'chriskempson/base16-vim'
 
 "Calendar
 Plug 'itchyny/calendar.vim'
@@ -43,8 +44,15 @@ Plug 'itchyny/calendar.vim'
 "Vim Wiki
 Plug 'vimwiki/vimwiki'
 
+"Bookmarks
+Plug 'MattesGroeger/vim-bookmarks'
+
 
 call plug#end()
+
+"Bookmarks
+let g:bookmark_save_per_working_dir = 1
+let g:bookmark_auto_save = 1
 
 "Calendar
 let g:calendar_google_calendar = 1
