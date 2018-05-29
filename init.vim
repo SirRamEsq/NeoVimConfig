@@ -270,20 +270,23 @@ nnoremap <F1> :<C-U>UltiSnipsEdit<CR>
 nnoremap <F2> :<C-U>Vexplore <CR>
 nnoremap <F3> :<C-U>Sexplore <CR>
 
+"Tagbar Key
+nnoremap <F4> :<C-U>TagbarToggle<CR>
+
 "Session saving and loading
 nnoremap <F5> :<C-U>call AskForConfirmationSave()<CR>
 nnoremap <F6> :<C-U>call AskForConfirmationLoad()<CR>
 
-"Tagbar Key
-nnoremap <F4> :<C-U>TagbarToggle<CR>
-
 "Fortune
 nnoremap <F7> :<C-U>Fortune<CR>
 
+"Bring up regex lib
+nnoremap <F8> :<C-U>Vexplore<CR>:<C-U>:e ~/.config/nvim/regexLibrary/index.wiki<CR>
+
+nnoremap <F9> :<C-U>make<CR><CR>
 
 "Default make function, can be overwritten by specifying
 "a file in after/ftplugins/<filetype>.vim
-nnoremap <F9> :<C-U>make<CR><CR>
 
 "Assign Retab key"
 "nnoremap <expr> <F10> ":<C-U>set tabstop=" . input("Set file tab width [1,2,3,4]") . "<CR>:set noexpandtab<CR>:%retab!<CR>:set tabstop=4<CR>"

@@ -1,0 +1,5 @@
+* Find and replace hungarian Notation member vars with _
+	* i.e. mVar1 -> _var1
+{{{
+%s/\<m\(\u\)/_\L\1/g
+}}}
