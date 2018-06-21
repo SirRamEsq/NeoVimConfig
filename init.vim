@@ -47,8 +47,12 @@ Plug 'vimwiki/vimwiki'
 "Bookmarks
 Plug 'MattesGroeger/vim-bookmarks'
 
-
 call plug#end()
+
+"Autoformat
+"Needs sqlparse installed
+let b:formatdef_sql = '"sqlformat --reindent --keywords upper --identifiers lower -"'
+let b:formatters_sql = ['sql']
 
 "Bookmarks
 let g:bookmark_save_per_working_dir = 1
@@ -292,7 +296,6 @@ nnoremap <F9> :<C-U>make<CR><CR>
 "nnoremap <expr> <F10> ":<C-U>set tabstop=" . input("Set file tab width [1,2,3,4]") . "<CR>:set noexpandtab<CR>:%retab!<CR>:set tabstop=4<CR>"
 "Assign Autoformat key
 nnoremap <expr> <F10> ":<C-U>Autoformat<CR>"
-
 
 "<F11> Mapped to fullscreen
 
