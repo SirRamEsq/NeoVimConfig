@@ -1,3 +1,16 @@
 Install Python 3, add to PATH
 RUN The following commands before installing vim plugins in a CMD prompt with ADMINISTRATOR rights
 pip3 install neovim
+
+If pip 3 fails, due to MS Visual CPP build tools, install here:
+	https://visualstudio.microsoft.com/visual-cpp-build-tools/	
+And run
+	pip install --upgrade setuptools
+	
+	
+Make sure 'git' is in the path
+
+Call only the section of code between
+call plug#begin()
+call plug#end()
+and install the plugins with :PlugInstall
