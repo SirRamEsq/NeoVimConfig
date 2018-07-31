@@ -1,32 +1,20 @@
-" This line should not be removed as it ensures that various options are
-" properly set to work with the Vim-related packages available in Debian.
-runtime! debian.vim
-
-"Ensure correct colors
-"set termguicolors
-
-"VimPlug
 call plug#begin()
-Plug 'fatih/vim-go'
+
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'fatih/vim-go'
 Plug 'https://github.com/w0rp/ale'
 Plug 'bling/vim-airline'
 Plug 'tpope/vim-fugitive'
 Plug 'chiel92/vim-autoformat'
-"Add a tagbar
 Plug 'majutsushi/tagbar'
-"Add git icons to the gutter
 Plug 'airblade/vim-gitgutter'
 Plug 'easymotion/vim-easymotion'
-
-"CTRLP file finding
 Plug 'ctrlpvim/ctrlp.vim'
-"Cool looking dev icons
-Plug 'ryanoasis/vim-devicons'
-"Handles snippets
 Plug 'sirver/UltiSnips'
-"Fortune like vim tips at startup
 Plug 'hobbestigrou/vimtips-fortune'
+Plug 'vimwiki/vimwiki'
+Plug 'jceb/vim-orgmode'
+Plug 'MattesGroeger/vim-bookmarks'
 
 "Syntax highlighters
 Plug 'tbastos/vim-lua'
@@ -38,29 +26,9 @@ Plug 'jacoborus/tender.vim'
 Plug 'fmoralesc/molokayo'
 Plug 'chriskempson/base16-vim'
 
-"Calendar
-Plug 'itchyny/calendar.vim'
-
-"Vim Wiki
-Plug 'vimwiki/vimwiki'
-
-"Bookmarks
-Plug 'MattesGroeger/vim-bookmarks'
 
 call plug#end()
 
-"Autoformat
-"Needs sqlparse installed
-let b:formatdef_sql = '"sqlformat --reindent --keywords upper --identifiers lower -"'
-let b:formatters_sql = ['sql']
-
-"Bookmarks
-let g:bookmark_save_per_working_dir = 1
-let g:bookmark_auto_save = 1
-
-"Calendar
-let g:calendar_google_calendar = 1
-let g:calendar_google_task = 1
 
 """"""""""""""""""
 "Tagbar gdscript"
@@ -89,7 +57,7 @@ let g:UltiSnipsExpandTrigger="<c-e>"
 let g:UltiSnipsJumpForwardTrigger="<c-w>"
 let g:UltiSnipsJumpBackwardTrigger="<c-b>"
 let g:UltiSnipsEditSplit="vertical"
-let g:UltiSnipsSnippetDirectories = ['~/.config/nvim/UltiSnips', 'UltiSnips']
+"let g:UltiSnipsSnippetDirectories = ['~\AppData\Local\nvim\UltiSnips', 'UltiSnips']
 
 """""""""""""""""""""""
 "Linters (ALE)
@@ -106,31 +74,14 @@ let g:ale_c_clang_options = '-std=c14 -Wall -Wno-system-headers'
 "autoformat on save
 "au BufWrite * :Autoformat
 
-""""""""""""""""""""""""
-"Vim DevIcons (fonts)
-"""""""""""""""""""""""""
-let g:airline_powerline_fonts = 1
-
-
 """"""""""""""""""""
 "AIRLINE
 """"""""""""""""""""
 let g:airline_section_z = airline#section#create(['linenr', 'maxlinenr', ':%3v'])
 
 """""""""""""""""""""""
-"General
-""""""""""""""""""""""""
-set encoding=utf8
-syntax on
-"Map f to leader for easy motion
-map <SPACE> \
-map <SPACE><SPACE> \\
-"timeoutlen is used for mapping delays, ttimeoutlen is used for key code delays
-set timeoutlen=500 ttimeoutlen=10
-
-"""""""""""""""""""""""
 " easyMotion config
-" """""""""""""""""""""""
+"""""""""""""""""""""""
 map <Leader>l <Plug>(easymotion-lineforward)
 map <Leader>j <Plug>(easymotion-j)
 map <Leader>k <Plug>(easymotion-k)
@@ -156,6 +107,27 @@ filetype plugin on
 filetype plugin indent on
 
 """""""""""""""""""""""
+"General
+""""""""""""""""""""""""
+
+"Favorite colors
+":color desert256
+:color molokaiCustom
+
+"Set tab character to appear 4 spaces wide
+set tabstop=4
+"Set an indent width to 4 to correspond to a single tab
+set shiftwidth=4
+
+set encoding=utf8
+syntax on
+"Map space to leader for easy motion
+map <SPACE> \
+map <SPACE><SPACE> \\
+"timeoutlen is used for mapping delays, ttimeoutlen is used for key code delays
+set timeoutlen=500 ttimeoutlen=10
+
+"""""""""""""""""""""""
 "Deoplete
 """"""""""""""""""""""""
 let g:deoplete#enable_at_startup = 1
@@ -179,30 +151,9 @@ set mouse=a		" Enable mouse usage (all modes)
 "source /etc/vim/vimrc.local
 "endif
 
-"Favorite colors
-":color desert256
-:color molokaiCustom
-
-"Set tab character to appear 4 spaces wide
-set tabstop=4
-"Set an indent width to 4 to correspond to a single tab
-set shiftwidth=4
-
-"CPP Highlighting VARS
-let g:cpp_class_scope_highlight = 1
-let g:cpp_member_variable_highlight = 1
-let g:cpp_class_decl_highlight = 1
-let g:cpp_concepts_highlight = 1
-
-"Experimental
-"Slower, more accurate
-let g:cpp_experimental_simple_template_highlight = 1
-"Faster Less accurate
-"let g:cpp_experimental_template_highlight = 1
-
-""""""""
-"Folding"
-"""""""""
+"""""""""""
+" FOLDING "
+"""""""""""
 set foldmethod=syntax
 set foldnestmax=10
 set nofoldenable
@@ -213,20 +164,6 @@ au FileType xml setlocal foldmethod=syntax
 
 "Show Line numbers
 set number
-
-"Git Nerdtree integration
-let g:NERDTreeIndicatorMapCustom = {
-			\ 'Modified'  : '✹',
-			\ 'Staged'    : '✚',
-			\ 'Untracked' : '✭',
-			\ 'Renamed'   : '➜',
-			\ 'Unmerged'  : '═',
-			\ 'Deleted'   : '✖',
-			\ 'Dirty'     : '✗',
-			\ 'Clean'     : '✔︎',
-			\ 'Ignored'   : '☒',
-			\ 'Unknown'   : '?'
-			\ }
 
 """"""""""""""""""""
 "netrw look and feel
@@ -242,6 +179,9 @@ let g:netrw_winsize = 50
 "True/False, enables or disables banner
 let g:netrw_banner = 1
 
+""""""""""""""""""
+" Session Saving "
+""""""""""""""""""
 function! AskForConfirmationSave() abort
 	let l:choice = input('Save Session? [Y/N]')
 	" ==? is case insensitive
@@ -265,7 +205,7 @@ endfunction
 """""""""""""""""""""""
 "Function Key Mappings"
 """""""""""""""""""""""
-"
+
 "<C-U> clears the command line, leaving only ':'
 nnoremap <F1> :<C-U>UltiSnipsEdit<CR>
 
@@ -298,23 +238,3 @@ nnoremap <F9> :<C-U>make<CR><CR>
 nnoremap <expr> <F10> ":<C-U>Autoformat<CR>"
 
 "<F11> Mapped to fullscreen
-
-"map highlight search toggle
-nnoremap <F12> :<C-U>set hlsearch!<CR>
-" Load all plugins now.
-" Plugins need to be added to runtimepath before helptags can be generated.
-packloadall
-" Load all of the helptags now, after plugins have been loaded.
-" All messages and errors will be ignored.
-silent! helptags ALL
-
-" Triger `autoread` when files changes on disk
-" https://unix.stackexchange.com/questions/149209/refresh-changed-content-of-file-opened-in-vim/383044#383044
-" https://vi.stackexchange.com/questions/13692/prevent-focusgained-autocmd-running-in-command-line-editing-mode
-autocmd FocusGained,BufEnter,CursorHold,CursorHoldI * if mode() != 'c' | checktime | endif
-" Notification after file change
-" https://vi.stackexchange.com/questions/13091/autocmd-event-for-autoread
-autocmd FileChangedShellPost *
-  \ echohl WarningMsg | echo "File changed on disk. Buffer reloaded." | echohl None
-
-

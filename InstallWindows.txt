@@ -1,0 +1,3 @@
+Install Python 3, add to PATH
+RUN The following commands before installing vim plugins in a CMD prompt with ADMINISTRATOR rights
+pip3 install neovim
