@@ -51,6 +51,14 @@ let g:bookmark_auto_save = 1
 let g:calendar_google_calendar = 1
 let g:calendar_google_task = 1
 
+"""""""""""
+" VIMWIKI "
+"""""""""""
+" Can have multiple wikis if so desired
+let g:vimwiki_list = [
+		\{'path': '~/Dropbox/vimWiki'}
+	\]
+
 """"""""""""""""""
 "Tagbar gdscript"
 """"""""""""""""""
