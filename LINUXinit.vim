@@ -56,7 +56,9 @@ let g:calendar_google_task = 1
 """""""""""
 " Can have multiple wikis if so desired
 let g:vimwiki_list = [
-		\{'path': '~/Dropbox/vimWiki'}
+		\{'path': '~/Dropbox/vimWiki/XPLM'},
+		\{'path': '~/Dropbox/vimWiki/Theocratic'},
+		\{'path': '~/Dropbox/vimWiki/Godot'}
 	\]
 
 """"""""""""""""""
