@@ -15,6 +15,8 @@ Plug 'hobbestigrou/vimtips-fortune'
 Plug 'vimwiki/vimwiki'
 Plug 'jceb/vim-orgmode'
 Plug 'MattesGroeger/vim-bookmarks'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-surround'
 
 "Syntax highlighters
 Plug 'tbastos/vim-lua'

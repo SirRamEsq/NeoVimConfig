@@ -19,6 +19,8 @@ Plug 'easymotion/vim-easymotion'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'sirver/UltiSnips'
 Plug 'hobbestigrou/vimtips-fortune'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-surround'
 
 "Syntax highlighters
 Plug 'tbastos/vim-lua'
@@ -51,14 +53,20 @@ let g:bookmark_auto_save = 1
 let g:calendar_google_calendar = 1
 let g:calendar_google_task = 1
 
+"""""""""""""""
+" Spell check "
+"""""""""""""""
+set spelllang=en
+set spellfile=$HOME/.config/nvim/spell/en.utf-8.add
+
 """""""""""
 " VIMWIKI "
 """""""""""
 " Can have multiple wikis if so desired
 let g:vimwiki_list = [
-		\{'path': '~/Dropbox/vimWiki/XPLM'},
-		\{'path': '~/Dropbox/vimWiki/Theocratic'},
-		\{'path': '~/Dropbox/vimWiki/Godot'}
+		\{'path': '~/vimWiki/XPLM'},
+		\{'path': '~/vimWiki/Theocratic'},
+		\{'path': '~/vimWiki/Godot'}
 	\]
 
 """"""""""""""""""
