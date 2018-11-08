@@ -102,9 +102,10 @@ let g:UltiSnipsSnippetDirectories = ['~/.config/nvim/UltiSnips', 'UltiSnips']
 "Linters (ALE)
 """"""""""""""""""""""""
 let g:ale_linters = {
-			\   'cpp': ['clang'],
-			\}
-"\   'go': ['golint', 'gofmt'],
+	\ 'cpp': ['clang'],
+	\ 'go': ['gometalinter']
+\}
+
 "Keep sign gutter open
 let g:ale_sign_column_always = 1
 
