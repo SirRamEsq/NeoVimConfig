@@ -38,6 +38,12 @@ Plug 'vimwiki/vimwiki'
 "Bookmarks
 Plug 'MattesGroeger/vim-bookmarks'
 
+Plug 'https://github.com/jreybert/vimagit'
+
+" Better Markdown support
+Plug 'gabrielelana/vim-markdown'
+let g:markdown_enable_spell_checking = 0
+
 call plug#end()
 
 "Autoformat
@@ -45,13 +51,9 @@ call plug#end()
 let b:formatdef_sql = '"sqlformat --reindent --keywords upper --identifiers lower -"'
 let b:formatters_sql = ['sql']
 
-"Bookmarks
+"Bookmarks, 'm' key is used
 let g:bookmark_save_per_working_dir = 1
 let g:bookmark_auto_save = 1
-
-"Calendar
-let g:calendar_google_calendar = 1
-let g:calendar_google_task = 1
 
 """""""""""""""
 " Spell check "
