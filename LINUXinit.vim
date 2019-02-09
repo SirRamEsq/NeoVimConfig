@@ -65,11 +65,11 @@ set spellfile=$HOME/.config/nvim/spell/en.utf-8.add
 " VIMWIKI "
 """""""""""
 " Can have multiple wikis if so desired
-let g:vimwiki_list = [
-		\{'path': '~/vimWiki/XPLM'},
-		\{'path': '~/vimWiki/Theocratic'},
-		\{'path': '~/vimWiki/Godot'}
-	\]
+" let g:vimwiki_list = [
+		" \{'path': '~/vimWiki/XPLM'},
+		" \{'path': '~/vimWiki/Theocratic'},
+		" \{'path': '~/vimWiki/Godot'}
+	" \]
 
 """"""""""""""""""
 "Tagbar gdscript"
@@ -309,4 +309,5 @@ autocmd FocusGained,BufEnter,CursorHold,CursorHoldI * if mode() != 'c' | checkti
 autocmd FileChangedShellPost *
   \ echohl WarningMsg | echo "File changed on disk. Buffer reloaded." | echohl None
 
-
+" Transparent BG
+hi Normal guibg=NONE ctermbg=NONE
