@@ -21,6 +21,7 @@ Plug 'sirver/UltiSnips'
 Plug 'hobbestigrou/vimtips-fortune'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
+Plug 'junegunn/limelight.vim'
 
 "Syntax highlighters
 Plug 'tbastos/vim-lua'
@@ -65,11 +66,11 @@ set spellfile=$HOME/.config/nvim/spell/en.utf-8.add
 " VIMWIKI "
 """""""""""
 " Can have multiple wikis if so desired
-" let g:vimwiki_list = [
-		" \{'path': '~/vimWiki/XPLM'},
-		" \{'path': '~/vimWiki/Theocratic'},
-		" \{'path': '~/vimWiki/Godot'}
-	" \]
+let g:vimwiki_list = [
+	 \{'path': '~/vimWiki/XPLM'},
+	 \{'path': '~/vimWiki/Theocratic'},
+	 \{'path': '~/vimWiki/Godot'}
+ \]
 
 """"""""""""""""""
 "Tagbar gdscript"
@@ -136,7 +137,7 @@ set shiftwidth=4
 
 set encoding=utf8
 syntax on
-"Map space to leader for easy motion
+"Map space to leader 
 map <SPACE> \
 map <SPACE><SPACE> \\
 "timeoutlen is used for mapping delays, ttimeoutlen is used for key code delays
@@ -145,14 +146,16 @@ set timeoutlen=500 ttimeoutlen=10
 """""""""""""""""""""""
 " easyMotion config
 """""""""""""""""""""""
-map <Leader>l <Plug>(easymotion-lineforward)
-map <Leader>j <Plug>(easymotion-j)
-map <Leader>k <Plug>(easymotion-k)
-map <Leader>h <Plug>(easymotion-linebackward)
-map <Leader>h <Plug>(easymotion-linebackward)
+map <Leader><Leader>l <Plug>(easymotion-lineforward)
+map <Leader><Leader>j <Plug>(easymotion-j)
+map <Leader><Leader>k <Plug>(easymotion-k)
+map <Leader><Leader>h <Plug>(easymotion-linebackward)
+
 
 let g:EasyMotion_startofline = 0 " keep cursor column when JK motion
 
+
+nnoremap <Leader>l :Limelight!!<CR>
 
 """""""""""""""""""""""
 "Go
@@ -310,4 +313,4 @@ autocmd FileChangedShellPost *
   \ echohl WarningMsg | echo "File changed on disk. Buffer reloaded." | echohl None
 
 " Transparent BG
-hi Normal guibg=NONE ctermbg=NONE
+" hi Normal guibg=NONE ctermbg=NONE
