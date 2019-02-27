@@ -42,10 +42,11 @@ Plug 'MattesGroeger/vim-bookmarks'
 Plug 'https://github.com/jreybert/vimagit'
 
 " Better Markdown support
-Plug 'gabrielelana/vim-markdown'
-let g:markdown_enable_spell_checking = 0
+Plug 'plasticboy/vim-markdown'
 
 call plug#end()
+
+let g:go_version_warning = 0
 
 "Autoformat
 "Needs sqlparse installed
