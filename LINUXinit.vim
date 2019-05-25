@@ -283,7 +283,10 @@ nnoremap <F7> :<C-U>Fortune<CR>
 "Bring up regex lib
 nnoremap <F8> :<C-U>Vexplore<CR>:<C-U>:e ~/.config/nvim/regexLibrary/index.wiki<CR>
 
-nnoremap <F9> :<C-U>make<CR><CR>
+"nnoremap <F9> :<C-U>make<CR><CR>
+autocmd Filetype rmd map <F9> :!echo<space>"require(rmarkdown);<space>render('<c-r>%')"<space>\|<space>R<space>--vanilla<enter>
+autocmd Filetype rmd inoremap ;r ```{r}<CR>```<CR><CR><esc>2kO
+autocmd Filetype rmd inoremap ;p ```{python}<CR>```<CR><CR><esc>2kO
 
 "Default make function, can be overwritten by specifying
 "a file in after/ftplugins/<filetype>.vim
