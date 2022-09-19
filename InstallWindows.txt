@@ -6,7 +6,9 @@ If pip 3 fails, due to MS Visual CPP build tools, install here:
 	https://visualstudio.microsoft.com/visual-cpp-build-tools/	
 And run
 	pip install --upgrade setuptools
-	
+
+Make sure to install pynvim
+	python3 -m pip install --user --upgrade pynvim
 	
 Make sure 'git' is in the path
 
