@@ -28,3 +28,13 @@ vim.keymap.set('n', '<Leader>b', ':Telescope buffers<CR>', { noremap = true, sil
 
 -- TODO
 -- Setup hydra
+
+local configDir = vim.fn.stdpath("config")
+print("Using config directory: " .. configDir)
+
+-- Jump to directories
+-- J = Jump
+-- F = file
+-- D = directory
+vim.keymap.set('n', '<Leader>jdc', ':Explore ' .. configDir .. '/lua/rlConfig<CR>', { noremap = true, silent = true, desc = 'Jump to config dir' })
+vim.keymap.set('n', '<Leader>jfc', ':e ' .. configDir .. '/lua/rlConfig/keyMappings.lua<CR>', { noremap = true, silent = true, desc = 'Jump to config file' })
