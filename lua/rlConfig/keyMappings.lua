@@ -16,6 +16,11 @@ vim.keymap.set('n', '<Leader>wl', '<C-w>l', { noremap = true, silent = true, des
 vim.keymap.set('n', '<Leader>ws', '<C-w>s', { noremap = true, silent = true, desc = 'Horizontal Split' })
 vim.keymap.set('n', '<Leader>wv', '<C-w>v', { noremap = true, silent = true, desc = 'Vertical Split' })
 
+-- CTRL + Backspace deletes a word in insert mode
+vim.keymap.set('i', '<C-BS>', '<C-w>', { noremap = true, silent = true, desc = 'Delete Word' })
+-- Some terminals send CTRL + H for CTRL + Backspace
+vim.keymap.set('i', '<C-h>', '<C-w>', { noremap = true, silent = true, desc = 'Delete Word' })
+
 -- Leader + t for tab stuff
 vim.keymap.set('n', '<Leader>tn', ':tabnew<CR>', { noremap = true, silent = true, desc = 'Create new tab' })
 vim.keymap.set('n', '<Leader>tc', ':tabclose<CR>', { noremap = true, silent = true, desc = 'Delete tab' })
