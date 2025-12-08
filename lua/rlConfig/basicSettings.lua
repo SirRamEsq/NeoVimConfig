@@ -41,7 +41,35 @@ vim.opt.gdefault = false -- Assume `g` flag in a substitude command; All matches
 -- Tab and indentation
 vim.opt.tabstop = 2
 vim.opt.shiftwidth = 2 
-vim.opt.expandtab = true -- when set to true, will insert spaces instead of literal tab character
+vim.opt.expandtab = false -- when set to true, will insert spaces instead of literal tab character
 vim.opt.autoindent = true -- Auto indent on new line
 vim.opt.smartindent = true
 vim.opt.smarttab = true
+
+
+-- Set window title
+getTitle=function()
+	local gitRootPath = vim.fn.system("git rev-parse --show-toplevel"):gsub("%s+", "")
+	if vim.v.shell_error == 0 then
+		-- Use fnamemodify to get only the tail (basename) of the path
+		return vim.fn.fnamemodify(gitRootPath, ":t")
+	end
+
+	-- vim.fn.getcwd() -- Get current working dir
+	local testVal = vim.fn.fnamemodify(vim.api.nvim_buf_get_name(0), ":t")
+	if testVal ~= "" then
+		return testVal
+	end
+
+	return "nvim"
+end
+
+vim.opt.title = true
+vim.opt.titlelen = 0 -- do not shorten title
+vim.opt.titlestring = getTitle()
+-- Update title when entering a buffer
+vim.api.nvim_create_autocmd("BufEnter", {
+	callback = function()
+		vim.opt.titlestring = getTitle()
+	end
+})
