@@ -29,7 +29,10 @@ vim.keymap.set('n', '<Leader>tc', ':tabclose<CR>', { noremap = true, silent = tr
 vim.keymap.set('n', '<Leader>.', ':Explore<CR>', { noremap = true, silent = true, desc = 'Explore' })
 
 -- Choose from buffers
-vim.keymap.set('n', '<Leader>b', ':Telescope buffers<CR>', { noremap = true, silent = true, desc = 'Explore' })
+vim.keymap.set('n', '<Leader>b', ':Telescope buffers<CR>', { noremap = true, silent = true, desc = 'Choose Buffer' })
+
+-- Copy entire buffer to system clipboard
+vim.keymap.set('n', '<F12>', ':%+y<CR>', { noremap = true, silent = true, desc = 'Copy Entire Buffer' })
 
 -- TODO
 -- Setup hydra
