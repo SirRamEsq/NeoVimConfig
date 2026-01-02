@@ -22,6 +22,8 @@ vim.opt.mouse = "a" -- use mouse in 'a'll modes
 vim.opt.showmode = false -- show what mode we're in; Disabled for LuaLine Plugin
 vim.opt.spelllang = "en_us"
 
+vim.opt.cursorline = true -- Enable highlighting the current line
+
 
 -- Basic Display
 vim.opt.termguicolors = true -- Allow 24bit color in terminals allowing it
