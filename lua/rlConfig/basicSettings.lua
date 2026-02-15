@@ -29,6 +29,10 @@ vim.opt.cursorline = true -- Enable highlighting the current line
 vim.opt.termguicolors = true -- Allow 24bit color in terminals allowing it
 vim.o.background = "dark" -- set to "dark" for dark theme
 
+-- Conceal level
+-- 2 - Conceal text unless line is highlighted
+vim.opt.conceallevel = 2 
+
 -- Open new split panes to right and below
 vim.opt.splitright = true
 vim.opt.splitbelow = true
