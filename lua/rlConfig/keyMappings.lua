@@ -15,6 +15,7 @@ vim.keymap.set('n', '<Leader>wk', '<C-w>k', { noremap = true, silent = true, des
 vim.keymap.set('n', '<Leader>wl', '<C-w>l', { noremap = true, silent = true, desc = 'Move to right pane' })
 vim.keymap.set('n', '<Leader>ws', '<C-w>s', { noremap = true, silent = true, desc = 'Horizontal Split' })
 vim.keymap.set('n', '<Leader>wv', '<C-w>v', { noremap = true, silent = true, desc = 'Vertical Split' })
+vim.keymap.set("n", "<leader>fo", ':ObsidianSearch<CR>', {})
 
 -- CTRL + Backspace deletes a word in insert mode
 vim.keymap.set('i', '<C-BS>', '<C-w>', { noremap = true, silent = true, desc = 'Delete Word' })
@@ -47,5 +48,7 @@ print("Using config directory: " .. configDir)
 -- J = Jump
 -- F = file
 -- D = directory
+-- O = obsidian
 vim.keymap.set('n', '<Leader>jdc', ':Explore ' .. configDir .. '/lua/rlConfig<CR>', { noremap = true, silent = true, desc = 'Jump to config dir' })
 vim.keymap.set('n', '<Leader>jfc', ':e ' .. configDir .. '/lua/rlConfig/keyMappings.lua<CR>', { noremap = true, silent = true, desc = 'Jump to config file' })
+vim.keymap.set('n', '<Leader>jdo', ':Explore ' .. '~/Dropbox/DropsyncFiles/ObsidianVault/Personal/<CR>', { noremap = true, silent = true, desc = 'Jump to config file' })
