@@ -53,6 +53,23 @@ vim.opt.smartindent = true
 vim.opt.smarttab = true
 
 
+-- Fold settings
+vim.opt.foldmethod = "expr"
+vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+-- extra column to display information on folds
+vim.opt.foldcolumn = "1"
+vim.opt.foldtext = "" 
+-- minimum level that is set to folded by default
+vim.opt.foldlevel = 99
+-- Default fold level started at
+vim.opt.foldlevelstart = 99
+
+-- How granular (how many levels of fold) are allowed
+vim.opt.foldnestmax = 20
+
+vim.opt.foldenable = true
+
+
 -- Set window title
 getTitle=function()
 	local gitRootPath = vim.fn.system("git rev-parse --show-toplevel"):gsub("%s+", "")
