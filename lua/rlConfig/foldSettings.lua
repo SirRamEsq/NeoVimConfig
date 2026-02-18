@@ -1,5 +1,6 @@
 
 -- Fold settings
+vim.opt.foldenable = true
 vim.opt.foldmethod = "expr"
 vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
 -- extra column to display information on folds
@@ -9,5 +10,7 @@ vim.opt.foldtext = ""
 vim.opt.foldlevel = 99
 -- Default fold level started at
 vim.opt.foldlevelstart = 99
+-- How granular (how many levels of fold) are allowed
+vim.opt.foldnestmax = 20
 
 -- Note, if you don't have folds on first opening nvim, try regenerating them via 'zx'
