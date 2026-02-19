@@ -33,9 +33,9 @@ vim.keymap.set('n', '<Leader>.', ':Explore<CR>', { noremap = true, silent = true
 vim.keymap.set('n', '<Leader>b', ':Telescope buffers<CR>', { noremap = true, silent = true, desc = 'Choose Buffer' })
 
 -- Copy entire buffer to system clipboard
-vim.keymap.set('n', '<F12>', ':%+y<CR>', { noremap = true, silent = true, desc = 'Copy Entire Buffer' })
+-- vim.keymap.set('n', '<F12>', ':%+y<CR>', { noremap = true, silent = true, desc = 'Copy Entire Buffer' })
 -- Copy git relative path to clipboard
-vim.keymap.set('n', '<F10>', ':CopyRelPathGitRoot<CR>', { noremap = true, silent = true, desc = 'Copy Entire Buffer' })
+-- vim.keymap.set('n', '<F10>', ':CopyRelPathGitRoot<CR>', { noremap = true, silent = true, desc = 'Copy Entire Buffer' })
 -- Fortune Cookie
 local fortune = require("fortune").get_fortune()
 vim.keymap.set('n', '<F7>', function() print(fortune[2]) end, { noremap = true, silent = true, desc = 'Fortune Cookie' })
