@@ -78,3 +78,26 @@ vim.api.nvim_create_autocmd("BufEnter", {
 		vim.opt.titlestring = getTitle()
 	end
 })
+
+
+-- Function to find the git root and copy the relative path to the clipboard
+function CopyRelativeToGitRoot()
+  -- Get the git root directory
+  local git_root = vim.fn.systemlist("git rev-parse --show-toplevel")[1]
+  if vim.v.shell_error ~= 0 then
+    print("Not in a git repository")
+    return
+  end
+  
+  -- Get absolute path and make it relative to git root
+  local absolute_path = vim.api.nvim_buf_get_name(0)
+  local relative_path = vim.fn.fnamemodify(absolute_path, ":p")
+  relative_path = relative_path:sub(#git_root + 2) -- +2 to remove the trailing slash
+
+  -- Copy to the system clipboard (+) register
+  vim.fn.setreg("+", relative_path)
+  print("Copied: " .. relative_path)
+end
+
+-- Create a Vim command for getting the relative path
+vim.cmd("command! CopyRelPathGitRoot lua CopyRelativeToGitRoot()")
