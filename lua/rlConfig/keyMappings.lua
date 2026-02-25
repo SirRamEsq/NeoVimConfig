@@ -40,8 +40,6 @@ vim.keymap.set('n', '<Leader>b', ':Telescope buffers<CR>', { noremap = true, sil
 local fortune = require("fortune").get_fortune()
 vim.keymap.set('n', '<F7>', function() print(fortune[2]) end, { noremap = true, silent = true, desc = 'Fortune Cookie' })
 
--- TODO
--- Setup hydra
 
 local configDir = vim.fn.stdpath("config")
 print("Using config directory: " .. configDir)
